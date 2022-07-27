@@ -1,7 +1,7 @@
 package de.mathema.mobileminutesadmob
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,4 +46,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onPause() {
+        mAdView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mAdView.resume()
+    }
+
+    override fun onDestroy() {
+        mAdView.destroy()
+        super.onDestroy()
+    }
+
 }
